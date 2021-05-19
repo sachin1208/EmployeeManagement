@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="card offset-md-2 col-md-8">
+            <div class="card-header">
+                List of employees
+            </div>
+            <table class="card-body table-bordered h-100">
+                <tr class="custom-padding">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Department</th>
+                    <th colspan="3">Action</th>
+                </tr>
+                <tr *ngFor="let employee of employees" class="custom-padding">
+                    <td>{{employee.firstName}}</td>
+                    <td>{{employee.lastName}}</td>
+                    <td>{{employee.dept}}</td>
+                    <td ><button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee)">DELETE</button></td>
+                    <td ><button class="btn btn-primary btn-sm" (click)="updateEmployee(employee)">UPDATE</button></td>
+                    <td ><button class="btn btn-success btn-sm" (click)="getEmployeeById(employee)">DETAIL</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

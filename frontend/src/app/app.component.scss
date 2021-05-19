@@ -1,0 +1,16 @@
+nav{
+    background-color: teal;
+    top:0;
+    position: sticky;
+    z-index :1
+}
+li{
+    padding-right: 120px;
+    cursor: pointer;
+}
+.navStyle{
+    margin-left:150px ;
+}
+.navbar-brand,.nav-link{
+    color: white;
+}

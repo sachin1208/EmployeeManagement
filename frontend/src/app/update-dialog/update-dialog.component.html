@@ -1,0 +1,47 @@
+<div class="alert alert-success">
+    Update employee details : 
+</div>
+<div>
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>First Name : </label>
+            <input type="text" placeholder="First Name" id="firstName" formControlName="firstName"
+                class="form-control" />
+            <p class="alert-danger"
+                *ngIf="!updateForm.controls.firstName.valid && updateForm.controls.firstName.touched">Field
+                required</p>
+        </div>
+        <div class="form-group">
+            <label>Last Name : </label>
+            <input type="text" placeholder="Last Name" id="lastName" formControlName="lastName" class="form-control" />
+            <p class="alert-danger"
+                            *ngIf="!updateForm.controls.lastName.valid && updateForm.controls.lastName.touched">Field
+                            required</p>
+        </div>
+        <div class="form-group">
+            <label>DOB : </label>
+            <input type="date" placeholder="DOB" id="dob" formControlName="dob" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Gender : </label>
+            <div>
+                <input type="radio" id="male" formControlName="gender" name="gender" value="male">
+                <label for="male">Male</label>&nbsp;&nbsp;
+                <input type="radio" id="female" formControlName="gender" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dept">Department :</label>
+            <select formControlName="dept" id="dept" class="form-control">
+                <option value="" disabled selected>Choose a department</option>
+                <option value="UX">UX</option>
+                <option value="Development">Development</option>
+                <option value="QA">QA</option>
+            </select>
+        </div><br>
+        <div class="form-group">
+            <button class="btn btn-success btn-small" mat-raised-button type="submit" [disabled]="!updateForm.valid">UPDATE</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-md">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <!-- button on collapse -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="nav-link navbar-nav navStyle">
+      <!-- Add Router links here -->
+      <li [routerLink]="['/employees']">Employee List</li>
+      <li [routerLink]="['/add']">Add Employee</li>
+    </ul>
+  </div>
+</nav>
+
+<!--Add router outlet tag here -->
+<router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row card-header">
+        Employee Details :
+    </div>
+    <div class="row card-body lh-lg alert-info">
+        <div class="col-md-6">
+            First Name :
+        </div>
+        <div class="col-md-6">
+            {{data.firstName}}
+        </div>
+        <div class="col-md-6">
+            Last Name :
+        </div>
+        <div class="col-md-6">
+            {{data.lastName}}
+        </div>
+        <div class="col-md-6">
+            Date Of Birth :
+        </div>
+        <div class="col-md-6">
+            {{data.dob | date: 'fullDate'}}
+        </div>
+        <div class="col-md-6">
+            Gender :
+        </div>
+        <div class="col-md-6">
+            {{data.gender | titlecase}}
+        </div>
+        <div class="col-md-6">
+            Department :
+        </div>
+        <div class="col-md-6">
+            {{data.dept}}
+        </div>
+    </div>
+
+</div>

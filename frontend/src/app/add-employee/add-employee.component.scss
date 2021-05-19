@@ -1,0 +1,9 @@
+.card-header,.card-footer{
+    background-color: #66b2b2;
+}
+.card-body{
+    background-color: #b2d8d8;
+}
+.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+}

@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 offset-4  pt-5">
+            <div class="card-header">
+                Create Employee
+            </div>
+            <div class="card-body">
+                <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>First Name : </label>
+                        <input type="text" placeholder="First Name" id="firstName" formControlName="firstName"
+                            class="form-control" />
+                        <p class="alert-danger"
+                            *ngIf="!createForm.controls.firstName.valid && createForm.controls.firstName.touched">Field
+                            required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name : </label>
+                        <input type="text" placeholder="Last Name" id="lastName" formControlName="lastName"
+                            class="form-control" />
+                        <p class="alert-danger"
+                            *ngIf="!createForm.controls.lastName.valid && createForm.controls.lastName.touched">Field
+                            required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>DOB : </label>
+                        <input type="date" placeholder="DOB" id="dob" formControlName="dob" class="form-control" />
+                        <p class="alert-danger"
+                            *ngIf="!createForm.controls.dob.valid && createForm.controls.dob.touched">Field
+                            required</p>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Gender : </label>
+                        <div>
+                            <input type="radio" id="male" formControlName="gender" name="gender" value="Male">
+                            <label for="male">Male</label>&nbsp;&nbsp;
+                            <input type="radio" id="female" formControlName="gender" name="gender" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dept">Department :</label>
+                        <select formControlName="dept" id="dept" class="form-control">
+                            <option value="" disabled selected>Choose a department</option>
+                            <option value="UX">UX</option>
+                            <option value="Development">Development</option>
+                            <option value="QA">QA</option>
+                        </select>
+                        <p class="alert-danger"
+                            *ngIf="!createForm.controls.dept.valid && createForm.controls.dept.touched">Field
+                            required</p>
+                    </div><br>
+                    <div class="form-group">
+                        <button class="btn btn-success" [disabled]="!createForm.valid" type="submit">CREATE</button>
+                    </div>
+                </form>
+            </div>
+            <div *ngIf="success" class="alert-success">
+                Employee has been added successfully.
+            </div>
+        </div>
+    </div>
+</div>
