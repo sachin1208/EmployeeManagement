@@ -1,18 +1,20 @@
-<nav class="navbar navbar-expand-md">
-  <!-- Brand -->
-  <a class="navbar-brand" href="#">{{title}}</a>
-  <!-- button on collapse -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="nav-link navbar-nav navStyle">
-      <!-- Add Router links here -->
-      <li [routerLink]="['/employees']">Employee List</li>
-      <li [routerLink]="['/add']">Add Employee</li>
-    </ul>
+<div class="container-fluid custom-background">
+  <div class='row'>
+    <nav class="navbar navbar-expand-md">
+      <!-- Brand -->
+      <a class="navbar-brand">{{title}}</a>
+      <div>
+        <ul class="nav-link navbar-nav navStyle">
+          <!-- Add Router links here -->
+          <li *ngIf='username' [routerLink]="['/employees']">Employee List</li>
+          <li *ngIf='username' [routerLink]="['/add']">Add Employee</li>
+          <li *ngIf='username' (click)="logoutMethod()" class="logoutClass h5">Logout</li>
+        </ul>
+      </div>
+    </nav>
   </div>
-</nav>
-
-<!--Add router outlet tag here -->
-<router-outlet></router-outlet>
+  <div class='row'>
+    <!--Add router outlet tag here -->
+    <router-outlet></router-outlet>
+  </div>
+</div>

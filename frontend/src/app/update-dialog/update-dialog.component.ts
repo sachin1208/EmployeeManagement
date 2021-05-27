@@ -29,4 +29,11 @@ export class UpdateDialogComponent implements OnInit {
     });
   }
 
+  updateBackground(){
+    console.log("function called");
+    
+  }
+
+
+
 }

@@ -5,7 +5,7 @@
     <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label>First Name : </label>
-            <input type="text" placeholder="First Name" id="firstName" formControlName="firstName"
+            <input type="text" placeholder="First Name" id="firstName" (on-keyUp)="updateBackground()" formControlName="firstName"
                 class="form-control" />
             <p class="alert-danger"
                 *ngIf="!updateForm.controls.firstName.valid && updateForm.controls.firstName.touched">Field
@@ -25,9 +25,9 @@
         <div class="form-group">
             <label>Gender : </label>
             <div>
-                <input type="radio" id="male" formControlName="gender" name="gender" value="male">
+                <input type="radio" id="male" formControlName="gender" name="gender" value="Male">
                 <label for="male">Male</label>&nbsp;&nbsp;
-                <input type="radio" id="female" formControlName="gender" name="gender" value="female">
+                <input type="radio" id="female" formControlName="gender" name="gender" value="Female">
                 <label for="female">Female</label>
             </div>
         </div>

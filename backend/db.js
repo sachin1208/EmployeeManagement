@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/emsDB', (err)=>{
+mongoose.connect('mongodb://localhost:27017/meanDB', (err)=>{
     if(!err){
         console.log('EMS Database Connection successful');
     } else {
